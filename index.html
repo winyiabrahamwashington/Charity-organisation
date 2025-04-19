@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Chicken Charity - Transforming Lives in Uganda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #FFFFFF;
+            --accent: #FFD700;
+            --text: #333333;
+            --light-gray: #F5F5F5;
+            --section-padding: 100px 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            background-color: var(--secondary);
+            color: var(--text);
+            line-height: 1.8;
+            font-weight: 400;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+/* Add this CSS to replace your current navigation styles */
+header {
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 12px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+}
+
+.logo span {
+    color: var(--secondary);
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin-left: 25px;
+    position: relative;
+}
+
+.nav-link {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1002;
+}
+
+.menu-icon-bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--secondary);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 992px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background-color: var(--primary);
+        padding: 80px 30px 30px;
+        transition: all 0.5s ease;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    nav.active {
+        right: 0;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+    }
+    
+    .nav-item {
+        margin: 15px 0;
+    }
+    
+    .nav-link {
+        font-size: 1.1rem;
+        padding: 10px 0;
+    }
+    
+    /* Animate hamburger to X */
+    .mobile-menu-btn.active .menu-icon-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .mobile-menu-btn.active .menu-icon-bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-btn.active .menu-icon-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* Header scroll effect */
+header.scrolled {
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/736x/eb/55/e0/eb55e035fc9e992bae6534484645f36c.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--secondary);
+            margin-top: 90px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent);
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        /* About Section */
+        .section {
+            padding: var(--section-padding);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 20px auto 0;
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 60px;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 5px solid var(--accent);
+            border-radius: 10px;
+            top: -20px;
+            left: -20px;
+            z-index: -1;
+        }
+
+        /* Mission Section */
+        .mission {
+            background-color: var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            opacity: 0.1;
+        }
+
+        .mission::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -150px;
+            opacity: 0.1;
+        }
+
+        .mission-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .mission-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .mission-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .mission-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .mission-item {
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        .mission-icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 20px;
+        }
+
+        .mission-details h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* Programs Section */
+        .programs {
+            position: relative;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .program-card {
+            background-color: var(--secondary);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--accent);
+        }
+
+        .program-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .program-info {
+            padding: 30px;
+        }
+
+        .program-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .program-info p {
+            margin-bottom: 20px;
+        }
+
+        /* Impact Section */
+        .impact {
+            background-color: var(--light-gray);
+            position: relative;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .stat-item {
+            padding: 40px 20px;
+            background-color: var(--secondary);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--accent);
+        }
+
+        .stat-item i {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            text-align: center;
+        }
+
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            padding: 40px 30px;
+            background-color: var(--secondary);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 25px;
+            position: relative;
+        }
+
+        .step-number::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--light-gray);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: var(--secondary);
+            font-size: 2.5rem;
+        }
+
+        /* Donate Section */
+        .donate {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://i.pinimg.com/736x/c2/4b/59/c24b59d4799284acfa7780c5dd54a561.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--secondary);
+            text-align: center;
+        }
+
+        .donate h2 {
+            color: var(--accent);
+        }
+
+        .donate p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .donate-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .donate-option {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s;
+            width: 250px;
+        }
+
+        .donate-option:hover {
+            background-color: rgba(255, 215, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .donate-option h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .donate-option p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .contact-details {
+            margin-top: 40px;
+        }
+
+        .contact-details div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-details i {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-right: 20px;
+            width: 30px;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--accent);
+            color: var(--primary);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--secondary);
+            padding: 80px 0 20px;
+            position: relative;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--accent);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-col p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+            opacity: 0.8;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            opacity: 1;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--secondary);
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .newsletter-form input {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.7;
+            }
+            70% {
+                transform: scale(1.1);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 992px) {
+            .section {
+                padding: 80px 0;
+            }
+
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 20px;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--primary);
+                padding: 100px 40px 40px;
+                transform: translateX(-100%);
+                transition: transform 0.3s;
+                z-index: 999;
+            }
+
+            nav.active {
+                transform: translateX(0);
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 20px 0;
+            }
+
+            nav ul li a {
+                font-size: 1.3rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                margin-top: 70px;
+                min-height: 600px;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .btn {
+                padding: 12px 30px;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .about-content, .mission-content {
+                flex-direction: column;
+            }
+
+            .about-image::before {
+                display: none;
+            }
+
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .step {
+                max-width: 100%;
+            }
+
+            .donate-options {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .donate-option {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .contact-form {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <!-- In your HTML (replace the entire <header> section) -->
+<header id="header">
+    <div class="container header-container">
+        <div class="logo">
+            <img src="https://i.pinimg.com/736x/9a/1c/e4/9a1ce4041668c2ca78dba19042d0d8b3.jpg" alt="Chicken Chicken Charity Logo">
+            <h1><span>C</span> C <span>Charity</span></h1>
+        </div>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation">
+            <span class="menu-icon-bar"></span>
+            <span class="menu-icon-bar"></span>
+            <span class="menu-icon-bar"></span>
+        </button>
+        
+        <nav id="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#mission" class="nav-link">Mission</a></li>
+                <li class="nav-item"><a href="#impact" class="nav-link">Impact</a></li>
+                <li class="nav-item"><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                <li class="nav-item"><a href="#donate" class="nav-link">Donate</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>One Person. One Life Changed.</h2>
+            <p>Chicken Chicken Charity is dedicated to transforming lives in Uganda by helping one individual each year through education, healthcare, and sustainable support.</p>
+            <div style="margin-top: 40px;">
+                <a href="#donate" class="btn">Donate Now</a>
+                <a href="#how-it-works" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+                <p>Chicken Chicken Charity is a newly established organization with a simple yet powerful vision</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Why We Exist</h3>
+                    <p>In Uganda, millions struggle with poverty, lack of access to education, and inadequate healthcare. While large-scale aid programs exist, we believe in the power of focused, personal transformation.</p>
+                    <p>Our name "Chicken Chicken" reflects our Ugandan roots and our commitment to approachable, grassroots change. Just as small steps lead to big journeys, helping one person at a time creates ripple effects that transform communities.</p>
+                    <p>Founded in 2023, we're starting small but dreaming big. Our goal is simple: each year, we will completely transform the life of one deserving Ugandan individual through comprehensive support.</p>
+                    <a href="#mission" class="btn">Our Mission</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://i.pinimg.com/736x/b9/57/c5/b957c512f45fde844b2f0e7ce36cc9b8.jpg" alt="Ugandan children">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="section mission" id="mission">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Mission</h2>
+                <p>We're committed to creating lasting change through focused, individual support</p>
+            </div>
+            <div class="mission-content">
+                <div class="mission-image">
+                    <img src="https://i.pinimg.com/736x/e4/61/62/e461629891cab68a9cec8f5c8c5cdc17.jpg" alt="Helping hand">
+                </div>
+                <div class="mission-text">
+                    <div class="mission-item">
+                        <div class="mission-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="mission-details">
+                            <h3>Education</h3>
+                            <p>We provide full scholarships, school supplies, and mentorship to ensure our selected individual receives quality education.</p>
+                        </div>
+                    </div>
+                    <div class="mission-item">
+                        <div class="mission-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="mission-details">
+                            <h3>Healthcare</h3>
+                            <p>Comprehensive medical coverage including check-ups, treatments, and health education for our beneficiaries.</p>
+                        </div>
+                    </div>
+                    <div class="mission-item">
+                        <div class="mission-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="mission-details">
+                            <h3>Family Support</h3>
+                            <p>We extend our help to the immediate family of our beneficiary, providing basic necessities and livelihood support.</p>
+                        </div>
+                    </div>
+                    <div class="mission-item">
+                        <div class="mission-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <div class="mission-details">
+                            <h3>Sustainable Change</h3>
+                            <p>Our support continues until the individual is fully empowered to sustain themselves and contribute to their community.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="section impact" id="impact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Impact</h2>
+                <p>Though we're just starting, our model is designed to create measurable, life-changing impact</p>
+            </div>
+            <div class="impact-stats">
+                <div class="stat-item">
+                    <i class="fas fa-user"></i>
+                    <h3 class="counter" data-target="1">0</h3>
+                    <p>Person Helped Each Year</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-heart"></i>
+                    <h3 class="counter" data-target="100">0</h3>
+                    <p>Lives Impacted in 100 Years</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-book"></i>
+                    <h3 class="counter" data-target="12">0</h3>
+                    <p>Years of Education Provided</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <h3 class="counter" data-target="5">0</h3>
+                    <p>Family Members Supported</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How It Works</h2>
+                <p>Our simple, transparent process ensures your donations create maximum impact</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Fundraising</h3>
+                    <p>We collect donations throughout the year to fund our annual beneficiary support program.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Selection</h3>
+                    <p>Our local team in Uganda identifies the most deserving individual based on need and potential.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Transformation</h3>
+                    <p>We provide comprehensive support including education, healthcare, and family assistance.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Reporting</h3>
+                    <p>Donors receive detailed reports on how their contributions changed someone's life forever.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Uganda Needs Help</h2>
+                <p>These images show the challenges faced by many Ugandans and why our work matters</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/eb/69/73/eb697387432a2821e4f7ad96191288b5.jpg" alt="Ugandan children">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/89/a6/29/89a629917d56fc2d963ba5544aea1cca.jpg" alt="Ugandan village">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/eb/74/dc/eb74dc03d416b90df887615ed7dfb99a.jpg" alt="Person in need">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/c1/f3/93/c1f393bd7f1843d8a5b1ec10d283abe3.jpg" alt="Education challenges">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/83/f2/d6/83f2d6a30a5809ea6607a645393156a4.jpg" alt="Healthcare needs">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/ac/74/27/ac7427a56cd3730394866a1d5d7a8204.jpg" alt="Community in need">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section class="section donate" id="donate">
+        <div class="container">
+            <div class="section-title">
+                <h2>Make a Difference</h2>
+                <p>Your donation will directly transform one Ugandan's life each year</p>
+            </div>
+            <div class="donate-options">
+                <div class="donate-option">
+                    <h3>$50</h3>
+                    <p>Provides school supplies for one year</p>
+                </div>
+                <div class="donate-option">
+                    <h3>$100</h3>
+                    <p>Covers healthcare expenses for 6 months</p>
+                </div>
+                <div class="donate-option">
+                    <h3>$250</h3>
+                    <p>Funds vocational training for our beneficiary</p>
+                </div>
+                <div class="donate-option">
+                    <h3>$500</h3>
+                    <p>Sponsors a full year of education</p>
+                </div>
+            </div>
+            <div style="margin-top: 50px;">
+                <a href="#" class="btn" style="background-color: var(--secondary); color: var(--primary);">Donate Any Amount</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>We'd love to hear from you - whether you want to volunteer, donate, or learn more</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Have questions about our work or how to get involved? Reach out to us through any of the channels below.</p>
+                    <p>We're particularly interested in connecting with Ugandan community leaders who can help us identify potential beneficiaries.</p>
+                    <div class="contact-details">
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Kampala, Uganda</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-phone"></i>
+                            <span>+256 123 456 789</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@chickencharity.org</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>About Us</h3>
+                    <p>Chicken Chicken Charity is a Ugandan-based organization dedicated to transforming lives one person at a time through focused, comprehensive support.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#mission">Our Mission</a></li>
+                        <li><a href="#impact">Our Impact</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#donate">Donate</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Focus Areas</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Healthcare</a></li>
+                        <li><a href="#">Family Support</a></li>
+                        <li><a href="#">Sustainable Change</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to receive updates on our beneficiary selection process and impact reports.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address" required>
+                        <button type="submit" class="submit-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Chicken Chicken Charity. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('nav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = nav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 90,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+        let animated = false;
+
+        function animateCounters() {
+            if (animated) return;
+            animated = true;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+
+        // Start counter animation when impact section is in view
+        const impactSection = document.getElementById('impact');
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.3
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        observer.observe(impactSection);
+
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        const newsletterForm = document.querySelector('.newsletter-form');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you, ${name}! Your message has been received. We'll get back to you soon.`);
+            
+            // Reset the form
+            contactForm.reset();
+        });
+
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for subscribing to our newsletter!');
+            newsletterForm.reset();
+        });
+
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.about-content, .mission-content, .program-card, .step');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Set initial state for animated elements
+        document.querySelectorAll('.about-content, .mission-content, .program-card, .step').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'all 0.6s ease';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
